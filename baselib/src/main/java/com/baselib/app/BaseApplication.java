@@ -10,6 +10,8 @@ import com.baselib.log.Logger;
 import com.baselib.log.NLog;
 import com.baselib.utils.AndroidUtils;
 import com.baselib.utils.NetworkHelper;
+import com.common.imageloader.ImageLoaderHelper;
+import com.common.network.OKHttpUtils;
 
 
 /**
@@ -71,7 +73,11 @@ public abstract class BaseApplication extends Application {
 
     protected abstract String getMainProcess();
 
+    protected abstract String getBaseUrl();
+
     private void initCommon() {
+
+        OKHttpUtils.init(this, getBaseUrl(), debugLog());
         //主进程才执行的代码
         String currentProcessName = AndroidUtils.getCurrentProcessName(this);
         if (TextUtils.equals(currentProcessName, getMainProcess())) {
@@ -89,7 +95,7 @@ public abstract class BaseApplication extends Application {
         super.onTrimMemory(level);
         NLog.v("GlideGlobalConfig", "onTrimMemory level: %d", level);
         //释放图片资源
-//            ImageLoaderHelper.getImageLoader().trimMemory(this, level);
+        ImageLoaderHelper.getImageLoader().trimMemory(this, level);
     }
 
 }

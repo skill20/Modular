@@ -29,8 +29,6 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation rootProject.appcompat
-    implementation rootProject.constraint
-    implementation project(':baselib')
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':resource')
 }
