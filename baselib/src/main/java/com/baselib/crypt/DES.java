@@ -8,7 +8,7 @@
  * History:
  * 1.0	devilxie	2012-09-05	Create
  */
-package com.worldunion.library.crypt;
+package com.baselib.crypt;
 
 import java.security.SecureRandom;
 

@@ -1,4 +1,4 @@
-package com.worldunion.library.adapter.wrapper;
+package com.baselib.adapter.wrapper;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;

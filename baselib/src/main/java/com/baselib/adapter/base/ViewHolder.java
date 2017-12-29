@@ -213,6 +213,18 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         return this;
     }
 
+    public ViewHolder setSelected(int viewId, boolean selected) {
+        View view = getView(viewId);
+        view.setSelected(selected);
+        return this;
+    }
+
+    public ViewHolder setEnable(int viewId, boolean enable) {
+        View view = getView(viewId);
+        view.setEnabled(enable);
+        return this;
+    }
+
     /**
      * 关于事件的
      */

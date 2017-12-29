@@ -1,4 +1,4 @@
-package com.worldunion.library.fs;
+package com.baselib.fs;
 
 import android.Manifest;
 import android.content.Context;
@@ -9,8 +9,8 @@ import android.os.StatFs;
 import android.support.v4.content.ContextCompat;
 
 
-import com.worldunion.library.log.NLog;
-import com.worldunion.library.utils.AndroidNewApi;
+import com.baselib.log.NLog;
+import com.baselib.utils.AndroidNewApi;
 
 import java.io.File;
 import java.io.IOException;

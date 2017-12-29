@@ -1,4 +1,4 @@
-package com.worldunion.library.network;
+package com.baselib.utils;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.text.TextUtils;
 
 
-import com.worldunion.library.log.NLog;
+import com.baselib.log.NLog;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -43,26 +44,22 @@ public class NetworkHelper {
     {
         return HelperHolder.helper;
     }
-	/*
-	private static void load()
-	{
-		try {
-			System.loadLibrary("networkhelper");
-		} catch (Exception e) {
 
-		}
-	}*/
 
-    boolean mRegistered = false;
-    NetworkStatus mStatus = NetworkStatus.NetworkNotReachable;
-    NetworkBroadcastReceiver mReceiver = new NetworkBroadcastReceiver();
-    List<WeakReference<NetworkInductor>> mInductors;
+    private boolean mRegistered = false;
+    private NetworkStatus mStatus = NetworkStatus.NetworkNotReachable;
+    private NetworkBroadcastReceiver mReceiver = new NetworkBroadcastReceiver();
+    private  List<WeakReference<NetworkInductor>> mInductors;
 
     private NetworkHelper(){
         //load();
-        mInductors = new LinkedList<WeakReference<NetworkInductor>>();
+        mInductors = new LinkedList<>();
     }
 
+    /**
+     * request android.permission.ACCESS_NETWORK_STATE
+     * @param context
+     */
     public void registerNetworkSensor(Context context)
     {
         NLog.v(TAG, "registerNetworkSensor");
@@ -72,7 +69,7 @@ public class NetworkHelper {
         mRegistered = true;
         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
-
+        assert manager != null;
         NetworkInfo info = manager.getActiveNetworkInfo();
         if (info == null || !info.isAvailable())
         {
@@ -176,9 +173,10 @@ public class NetworkHelper {
                 return;
 
             String action = intent.getAction();
-            if (action.equals(ConnectivityManager.CONNECTIVITY_ACTION))
+            if (TextUtils.equals(action,ConnectivityManager.CONNECTIVITY_ACTION))
             {
                 ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                assert manager != null;
                 NetworkInfo info = manager.getActiveNetworkInfo();
                 NetworkStatus ns = NetworkStatus.NetworkNotReachable;
                 if (info == null || !info.isAvailable())

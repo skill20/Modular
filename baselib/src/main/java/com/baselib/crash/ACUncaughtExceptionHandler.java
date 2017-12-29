@@ -1,4 +1,4 @@
-package com.worldunion.library.crash;
+package com.baselib.crash;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -10,8 +10,8 @@ import android.os.Environment;
 import android.text.TextUtils;
 
 
-import com.worldunion.library.base.ActivityStackHelper;
-import com.worldunion.library.utils.AndroidUtils;
+import com.baselib.base.ActivityStackHelper;
+import com.baselib.utils.AndroidUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -52,10 +52,6 @@ public class ACUncaughtExceptionHandler implements Thread.UncaughtExceptionHandl
         collectDeviceInfo();
     }
 
-    public static void init(Context context) {
-
-    }
-
     public static void setContextActivity(Class<?> contextActivity) {
         ACUncaughtExceptionHandler.contextActivity = contextActivity.getCanonicalName();
     }
@@ -75,7 +71,7 @@ public class ACUncaughtExceptionHandler implements Thread.UncaughtExceptionHandl
      * @param ex
      * @return true:如果处理了该异常信息;否则返回false.
      */
-    protected boolean handleException(Thread thread, Throwable ex) {
+    private boolean handleException(Thread thread, Throwable ex) {
         if (ex == null) {
             return false;
         }

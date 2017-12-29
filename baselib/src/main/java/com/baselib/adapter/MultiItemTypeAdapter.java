@@ -1,14 +1,14 @@
-package com.worldunion.library.adapter;
+package com.baselib.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.worldunion.library.adapter.base.ItemViewBinder;
-import com.worldunion.library.adapter.base.ItemViewBinderManager;
-import com.worldunion.library.adapter.base.MultiItemType;
-import com.worldunion.library.adapter.base.ViewHolder;
+import com.baselib.adapter.base.ItemViewBinder;
+import com.baselib.adapter.base.ItemViewBinderManager;
+import com.baselib.adapter.base.MultiItemType;
+import com.baselib.adapter.base.ViewHolder;
 
 import java.util.List;
 

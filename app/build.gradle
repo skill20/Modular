@@ -1,13 +1,24 @@
 apply plugin: 'com.android.application'
 
+def publishCode = 4//发布到正式市场时递增。
+def buildVersionNumber = '0'
+def buildVersionName = "2.0." + buildVersionNumber
+
 android {
-    compileSdkVersion 26
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
     defaultConfig {
         applicationId "com.worldunion.partner"
-        minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode publishCode
+        versionName buildVersionName
+
+
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86-64'
+        }
     }
     buildTypes {
         release {
@@ -18,7 +29,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.appcompat
+    implementation rootProject.constraint
+    implementation project(':baselib')
 }

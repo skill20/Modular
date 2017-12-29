@@ -1,9 +1,8 @@
-package com.worldunion.partner.app;
+package com.baselib.app;
 
 import android.content.Context;
 
-import com.worldunion.library.ServiceContext;
-import com.worldunion.library.fs.DirectoryManager;
+import com.baselib.fs.DirectoryManager;
 
 
 /**
@@ -13,7 +12,7 @@ import com.worldunion.library.fs.DirectoryManager;
  * Description 请不要作为全局的Context使用，需要用Context应该从方法里传进去。
  */
 public class GlobeContext extends ServiceContext {
-    private static final String SD_ROOT = "partner";
+    private static final String SD_ROOT = "primary";
     private static final String SERVICE_NAME = "dir";
     private static boolean CONTEXT_INIT_SUCCESS = false;
 

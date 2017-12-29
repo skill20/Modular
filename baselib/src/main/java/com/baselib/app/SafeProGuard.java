@@ -1,4 +1,4 @@
-package com.worldunion.partner.app;
+package com.baselib.app;
 
 /**
  * Create by pc-qing

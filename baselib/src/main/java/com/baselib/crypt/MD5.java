@@ -8,11 +8,12 @@
  * History:
  * 1.0	devilxie	2012-09-05	Create
  */
-package com.worldunion.library.crypt;
+package com.baselib.crypt;
 
 
 
-import com.worldunion.library.log.NLog;
+
+import com.baselib.log.NLog;
 
 import java.io.IOException;
 import java.io.InputStream;

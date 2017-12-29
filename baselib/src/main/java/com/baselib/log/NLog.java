@@ -8,11 +8,12 @@
  * History:
  * 1.0	devilxie	2012-09-05	Create
  */
-package com.worldunion.library.log;
+package com.baselib.log;
 
 import android.text.TextUtils;
 
 import java.io.File;
+
 /**
  * 日志输出类，可控制调试与文件日志的控制
  * @author devilxie
@@ -20,7 +21,7 @@ import java.io.File;
  */
 public final class NLog
 {
-	private final static String	LOG_FILENAME	= "wu_logcat.log";
+	private final static String	LOG_FILENAME	= "nlog_logcat.log";
 	private static boolean		debug			= false;			// 是否记录日志
 	private static Logger		logger			= null;
 	private static final String LOGGING_PROPERTIES = "logging.properties";
@@ -84,11 +85,9 @@ public final class NLog
 				if (!b)
 					return false;
 			}
-			
-			StringBuffer sb = new StringBuffer(path);
-			sb.append(File.separator);
-			sb.append(LOG_FILENAME);
-			path = sb.toString();
+
+			path = path + File.separator +
+					LOG_FILENAME;
 		}
 		
 		
@@ -99,9 +98,8 @@ public final class NLog
 	{
 		if (args == null || args.length == 0)
 			return format;
-		
-		String msg = String.format(format, args);
-		return msg;
+
+		return String.format(format, args);
 	}
 
 	public static void d(String tag, String format, Object...args)
@@ -156,7 +154,7 @@ public final class NLog
 	{
 		if (debug)
 		{
-			logger.e("WUException", e);
+			logger.e("NLogException", e);
 		}
 	}
 }

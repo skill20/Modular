@@ -1,12 +1,12 @@
-package com.worldunion.library.crash;
+package com.baselib.crash;
 
 import android.content.Context;
 import android.os.Debug;
 import android.view.InflateException;
 
 
-import com.worldunion.library.log.NLog;
-import com.worldunion.library.utils.FileUtils;
+import com.baselib.log.NLog;
+import com.baselib.utils.FileUtils;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

@@ -1,9 +1,9 @@
-package com.worldunion.partner.app;
+package com.baselib.app;
 
 import android.content.Context;
 
-import com.worldunion.library.base.ActivityLifecycleLogger;
-import com.worldunion.library.utils.ToastUtils;
+import com.baselib.base.ActivityLifecycleLogger;
+import com.baselib.utils.ToastUtils;
 
 
 /**

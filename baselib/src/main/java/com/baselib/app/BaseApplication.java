@@ -18,7 +18,7 @@ import com.baselib.utils.NetworkHelper;
  * Copyright(c) 2017 XunLei
  * Description
  */
-public abstract class PartnerApplication extends Application {
+public abstract class BaseApplication extends Application {
 
     @Override
     public void onCreate() {
@@ -78,7 +78,7 @@ public abstract class PartnerApplication extends Application {
             ActivityLifecycleLogger activityLifecycleLogger =
                     new ActivityLifecycleLogger(new CuteLifecycleDelegate());
             registerActivityLifecycleCallbacks(activityLifecycleLogger);
-            PreferencesHelper.init(this);
+//            PreferencesHelper.init(this);
             initComponent();
         }
     }

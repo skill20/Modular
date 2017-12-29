@@ -1,4 +1,4 @@
-package com.worldunion.library.base;
+package com.baselib.base;
 
 import android.app.Activity;
 import android.app.Application;
@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 
-import com.worldunion.library.crash.ACUncaughtExceptionHandler;
-import com.worldunion.library.log.NLog;
+import com.baselib.crash.ACUncaughtExceptionHandler;
+import com.baselib.log.NLog;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
@@ -20,8 +20,8 @@ import java.util.LinkedList;
  */
 public class ActivityLifecycleLogger implements Application.ActivityLifecycleCallbacks {
 
-    public static class ActivityReference extends WeakReference<Activity> {
-        public ActivityReference(Activity r, ReferenceQueue<? super Activity> q) {
+    private static class ActivityReference extends WeakReference<Activity> {
+        private ActivityReference(Activity r, ReferenceQueue<? super Activity> q) {
             super(r, q);
         }
     }
@@ -36,18 +36,18 @@ public class ActivityLifecycleLogger implements Application.ActivityLifecycleCal
     /**
      * 垃圾Reference的队列（所引用的对象已经被回收，则将该引用存入队列中）
      */
-    final ReferenceQueue<Activity> sReferenceQueue = new ReferenceQueue<Activity>();
-    final LinkedList<ActivityReference> sStack = new LinkedList<ActivityReference>();
+    private final ReferenceQueue<Activity> sReferenceQueue = new ReferenceQueue<Activity>();
+    private final LinkedList<ActivityReference> sStack = new LinkedList<ActivityReference>();
 
-    int aliveActivities;
-    int paused;
-    int resumed;
+    private int aliveActivities;
+    private int paused;
+    private int resumed;
 
-    int state = STATE_BACKGROUND;
-    Handler handler = new Handler();
-    int delay = BACKGROUND_TICK_DELAY;
-    final ApplicationLifecycleDelegate applicationLifecycleDelegate;
-    Context applicationContext;
+    private int state = STATE_BACKGROUND;
+    private Handler handler = new Handler();
+    private int delay = BACKGROUND_TICK_DELAY;
+    private final ApplicationLifecycleDelegate applicationLifecycleDelegate;
+    private Context applicationContext;
 
     public ActivityLifecycleLogger() {
         this(null);
@@ -184,7 +184,7 @@ public class ActivityLifecycleLogger implements Application.ActivityLifecycleCal
         }
     }
 
-    Runnable delayAction = new Runnable() {
+    private Runnable delayAction = new Runnable() {
         @Override
         public void run() {
             state = STATE_BACKGROUND;

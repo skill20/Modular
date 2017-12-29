@@ -8,9 +8,10 @@
  * History:
  * 1.0	devilxie	2012-09-05	Create
  */
-package com.worldunion.library.crypt;
+package com.baselib.crypt;
 
 import java.io.UnsupportedEncodingException;
+
 /**
  * Base64编解码类， 提供base64编解码类功能
  * @author devilxie

@@ -1,4 +1,4 @@
-package com.worldunion.library.utils;
+package com.baselib.utils;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;

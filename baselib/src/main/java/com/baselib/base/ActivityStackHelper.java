@@ -1,8 +1,9 @@
-package com.worldunion.library.base;
+package com.baselib.base;
 
 import android.app.Activity;
 import android.os.Looper;
 import android.os.MessageQueue;
+
 import java.io.IOException;
 import java.io.Writer;
 import java.lang.ref.ReferenceQueue;
@@ -17,17 +18,17 @@ import java.util.List;
  */
 public class ActivityStackHelper {
 
-    public static class ActivityReference extends WeakReference<Activity>
+    private static class ActivityReference extends WeakReference<Activity>
     {
-        public ActivityReference(Activity r, ReferenceQueue<? super Activity> q)
+        private ActivityReference(Activity r, ReferenceQueue<? super Activity> q)
         {
             super(r, q);
         }
     }
 
     /** 垃圾Reference的队列（所引用的对象已经被回收，则将该引用存入队列中） */
-    static ReferenceQueue<Activity>	sReferenceQueue = null;
-    static LinkedList<ActivityReference> sStack = new LinkedList<ActivityReference>();
+    private static ReferenceQueue<Activity>	sReferenceQueue = null;
+    private static LinkedList<ActivityReference> sStack = new LinkedList<ActivityReference>();
 
     public static ActivityReference push(Activity activity) {
         if (activity == null)

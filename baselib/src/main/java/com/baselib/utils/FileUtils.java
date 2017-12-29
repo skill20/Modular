@@ -9,7 +9,7 @@
  * 1.0	devilxie	2012-09-05	Create
  */
 
-package com.worldunion.library.utils;
+package com.baselib.utils;
 
 import android.graphics.Bitmap;
 import android.os.Environment;
@@ -17,7 +17,7 @@ import android.os.StatFs;
 import android.text.TextUtils;
 
 
-import com.worldunion.library.crypt.MD5;
+import com.baselib.crypt.MD5;
 
 import org.w3c.dom.Document;
 
