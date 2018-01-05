@@ -1,8 +1,10 @@
-package com.baselib.app;
+package com.common.base;
 
 import android.app.Application;
 import android.text.TextUtils;
 
+import com.baselib.app.CuteLifecycleDelegate;
+import com.baselib.app.GlobeContext;
 import com.baselib.base.ActivityLifecycleLogger;
 import com.baselib.crash.ACUncaughtExceptionHandler;
 import com.baselib.fs.DirType;

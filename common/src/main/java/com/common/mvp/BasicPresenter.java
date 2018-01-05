@@ -1,11 +1,11 @@
-package com.common.mvp;//package com.worldunion.library.mvp;
+package com.common.mvp;
 
 import android.content.Context;
-
 
 import com.common.network.OKHttpUtils;
 
 import io.reactivex.Observable;
+
 
 /**
  * Create by wangqingqing

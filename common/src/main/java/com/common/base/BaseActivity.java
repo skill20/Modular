@@ -1,4 +1,4 @@
-package com.baselib.base;
+package com.common.base;
 
 import android.support.v7.app.AppCompatActivity;
 

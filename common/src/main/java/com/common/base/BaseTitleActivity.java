@@ -1,4 +1,4 @@
-package com.baselib.base;
+package com.common.base;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ public class BaseTitleActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (supportTitle()) {
-            setContentView(R.layout.base_activity_title);
+            setContentView(R.layout.common_activity_title);
         }
     }
 

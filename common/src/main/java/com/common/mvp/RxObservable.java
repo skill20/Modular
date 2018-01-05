@@ -1,4 +1,4 @@
-package com.common.mvp;//package com.worldunion.library.mvp;
+package com.common.mvp;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
