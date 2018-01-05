@@ -19,14 +19,4 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep interface com.baselib.app.SafeProGuard
 
--keep class ** implements com.baselib.app.SafeProGuard {
-    <fields>;
-    public protected <methods>;
-}
-
--keep class **$* implements com.baselib.app.SafeProGuard {
-    <fields>;
-    public protected <methods>;
-}

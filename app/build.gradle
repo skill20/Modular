@@ -20,10 +20,30 @@ android {
             abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86-64'
         }
     }
+
+    signingConfigs {
+        release {
+            //签名文件
+            storeFile file('partner.jks')
+            keyAlias 'worldunion'
+            storePassword "123456789"
+            keyPassword "123456789"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+
+            versionNameSuffix ".debug"
+            signingConfig signingConfigs.release
         }
     }
 }
