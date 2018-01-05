@@ -20,7 +20,7 @@ import com.bumptech.glide.request.target.ViewTarget;
 public class GlideGlobalConfig implements GlideModule {
     @Override
     public void applyOptions(Context context, GlideBuilder builder) {
-        ViewTarget.setTagId(R.id.glide_tag);
+        ViewTarget.setTagId(R.id.base_glide_tag);
         String path = GlobeContext.getDirectoryPath(DirType.image);
         builder.setDiskCache(new DiskLruCacheFactory(path, "", Integer.MAX_VALUE));
         builder.setMemoryCache(GlideImageLoader.getInstance().memoryCache);

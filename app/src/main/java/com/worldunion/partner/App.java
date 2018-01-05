@@ -33,4 +33,9 @@ public class App extends BaseApplication{
     protected String getMainProcess() {
         return "com.worldunion.partner";
     }
+
+    @Override
+    protected String getBaseUrl() {
+        return "";
+    }
 }
