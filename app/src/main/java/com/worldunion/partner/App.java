@@ -1,6 +1,7 @@
 package com.worldunion.partner;
 
-import com.baselib.app.BaseApplication;
+
+import com.common.base.BaseApplication;
 
 /**
  * Create by wangqingqing
@@ -8,7 +9,7 @@ import com.baselib.app.BaseApplication;
  * Copyright(c) 2017 世联行
  * Description
  */
-public class App extends BaseApplication{
+public class App extends BaseApplication {
     @Override
     protected boolean debugLog() {
         return true;

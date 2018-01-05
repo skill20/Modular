@@ -29,7 +29,6 @@ dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     api project(':baselib')
 
-
     //glide
     api 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
     api 'jp.wasabeef:glide-transformations:2.0.2'
@@ -43,4 +42,6 @@ dependencies {
     api 'com.squareup.retrofit2:retrofit:2.3.0'
     api 'com.squareup.retrofit2:converter-gson:2.3.0'
     api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //友盟统计
+    implementation 'com.umeng.analytics:analytics:6.1.2'
 }

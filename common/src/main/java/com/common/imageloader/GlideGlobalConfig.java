@@ -2,7 +2,6 @@ package com.common.imageloader;
 
 import android.content.Context;
 
-import com.baselib.R;
 import com.baselib.app.GlobeContext;
 import com.baselib.fs.DirType;
 import com.bumptech.glide.Glide;
@@ -10,6 +9,7 @@ import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.load.engine.cache.DiskLruCacheFactory;
 import com.bumptech.glide.module.GlideModule;
 import com.bumptech.glide.request.target.ViewTarget;
+import com.common.R;
 
 /**
  * Create by pc-qing

@@ -1,1 +1,17 @@
-<manifest package="com.common" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.common">
+
+    <application>
+
+        <meta-data
+            android:name="com.common.imageloader.GlideGlobalConfig"
+            android:value="GlideModule" />
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="59c8d52bf29d98244000002c" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="UMENG_CHANNEL_VALUE" />
+    </application>
+</manifest>
