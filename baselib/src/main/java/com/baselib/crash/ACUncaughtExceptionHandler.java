@@ -26,10 +26,8 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * Create by pc-qing
- * On 2017/2/15 11:25
- * Copyright(c) 2017 XunLei
- * Description
+ * @author devilxie
+ * @version 1.0
  */
 public class ACUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
 

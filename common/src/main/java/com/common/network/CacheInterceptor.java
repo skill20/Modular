@@ -15,7 +15,7 @@ import okhttp3.Response;
 /**
  * Create by pc-qing
  * On 2017/2/10 10:59
- * Copyright(c) 2017 XunLei
+ * Copyright(c) 2017 世联行
  * Description
  */
 class CacheInterceptor implements Interceptor {

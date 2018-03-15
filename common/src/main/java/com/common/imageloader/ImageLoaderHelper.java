@@ -3,7 +3,7 @@ package com.common.imageloader;
 /**
  * Create by pc-qing
  * On 2017/2/13 10:18
- * Copyright(c) 2017 XunLei
+ * Copyright(c) 2017 世联行
  * Description
  */
 public class ImageLoaderHelper {

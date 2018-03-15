@@ -1,10 +1,8 @@
 package com.baselib.fs;
 
 /**
- * & author pc-qing
- * & date 2016/7/11 15:39
- * & since 6.0.0
- * & copyright TCL-MIG
+ * @author devilxie
+ * @version 1.0
  */
 public enum DirType {
     log,

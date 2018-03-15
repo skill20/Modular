@@ -14,7 +14,7 @@ import com.common.R;
 /**
  * Create by pc-qing
  * On 2017/2/13 11:28
- * Copyright(c) 2017 XunLei
+ * Copyright(c) 2017 世联行
  * Description
  */
 public class GlideGlobalConfig implements GlideModule {

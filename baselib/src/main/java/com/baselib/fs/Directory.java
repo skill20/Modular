@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * & author pc-qing
- * & date 2016/7/11 13:11
- * & since 6.0.0
- * & copyright TCL-MIG
+ * @author devilxie
+ * @version 1.0
  */
 public final class Directory {
 

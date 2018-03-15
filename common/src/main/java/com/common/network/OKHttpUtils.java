@@ -38,7 +38,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Create by pc-qing
  * On 2017/2/9 18:46
- * Copyright(c) 2017 XunLei
+ * Copyright(c) 2017 世联行
  * Description
  */
 public class OKHttpUtils {

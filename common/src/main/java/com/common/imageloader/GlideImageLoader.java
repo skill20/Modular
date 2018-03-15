@@ -19,7 +19,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * Create by pc-qing
  * On 2017/2/13 10:25
- * Copyright(c) 2017 XunLei
+ * Copyright(c) 2017 世联行
  * Description
  */
 public class GlideImageLoader implements ImageLoader {

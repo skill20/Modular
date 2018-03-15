@@ -3,10 +3,8 @@ package com.baselib.fs;
 import java.io.File;
 
 /**
- * & author pc-qing
- * & date 2016/7/11 14:47
- * & since 6.0.0
- * & copyright TCL-MIG
+ * @author devilxie
+ * @version 1.0
  */
 public final class CacheChecker {
     public static boolean expired(File file, long expiredTimeMs) {

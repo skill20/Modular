@@ -6,9 +6,8 @@ import com.baselib.fs.DirectoryManager;
 
 
 /**
- * Create by pc-qing
- * On 2017/2/15 11:23
- * Copyright(c) 2017 XunLei
+ * @author devilxie
+ * @version 1.0
  * Description 请不要作为全局的Context使用，需要用Context应该从方法里传进去。
  */
 public class GlobeContext extends ServiceContext {

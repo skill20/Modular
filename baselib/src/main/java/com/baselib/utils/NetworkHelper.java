@@ -17,10 +17,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Create by pc-qing
- * On 2017/2/15 11:48
- * Copyright(c) 2017 XunLei
- * Description
+ * @author devilxie
+ * @version 1.0
  */
 public class NetworkHelper {
 

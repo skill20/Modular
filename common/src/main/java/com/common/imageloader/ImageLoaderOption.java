@@ -7,7 +7,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 /**
  * Create by pc-qing
  * On 2017/3/3 10:01
- * Copyright(c) 2017 XunLei
+ * Copyright(c) 2017 世联行
  * Description
  */
 public class ImageLoaderOption {
