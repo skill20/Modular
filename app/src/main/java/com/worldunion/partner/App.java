@@ -2,6 +2,8 @@ package com.worldunion.partner;
 
 
 import com.common.base.BaseApplication;
+import com.common.net.HttpManager;
+import com.common.network.OKHttpUtils;
 
 /**
  * Create by wangqingqing
@@ -27,7 +29,8 @@ public class App extends BaseApplication {
 
     @Override
     protected void initComponent() {
-
+//        OKHttpUtils.init(this,getBaseUrl(),true);
+        HttpManager.init(this,getBaseUrl(),true);
     }
 
     @Override
@@ -37,6 +40,6 @@ public class App extends BaseApplication {
 
     @Override
     protected String getBaseUrl() {
-        return "";
+        return "https://api.douban.com/v2/";
     }
 }
