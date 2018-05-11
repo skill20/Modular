@@ -24,7 +24,7 @@ public class RxSchedulers {
      * @param <T>
      * @return
      */
-    public static <T> ObservableTransformer<T, T> ioTomain() {
+    public static <T> ObservableTransformer<T, T> ioToMain() {
         return new ObservableTransformer<T, T>() {
             @Override
             public ObservableSource<T> apply(Observable<T> upstream) {

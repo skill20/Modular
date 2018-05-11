@@ -73,7 +73,7 @@ public class HttpManager {
 
 
     public <T> void toSubscribe(Observable<T> o, RxObserver<T> s) {
-        o.compose(RxSchedulers.<T>ioTomain()).subscribe(s);
+        o.compose(RxSchedulers.<T>ioToMain()).subscribe(s);
     }
 
 
