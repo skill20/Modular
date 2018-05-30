@@ -79,7 +79,7 @@ public abstract class BaseApplication extends Application {
 
     private void initCommon() {
 
-        OKHttpUtils.init(this, getBaseUrl(), debugLog());
+//        OKHttpUtils.init(this, getBaseUrl(), debugLog());
         //主进程才执行的代码
         String currentProcessName = AndroidUtils.getCurrentProcessName(this);
         if (TextUtils.equals(currentProcessName, getMainProcess())) {

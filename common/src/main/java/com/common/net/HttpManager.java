@@ -2,10 +2,22 @@ package com.common.net;
 
 import android.content.Context;
 
+import com.baselib.app.GlobeContext;
+import com.baselib.fs.DirType;
+import com.baselib.utils.NetworkHelper;
+import com.common.network.CacheInterceptor;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
+import okhttp3.Cache;
+import okhttp3.CacheControl;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -28,12 +40,19 @@ public class HttpManager {
 
     public HttpManager(Context context, String baseUrl, boolean debug) {
 
+        Context tempContext = context.getApplicationContext();
+        Cache cache = buildCache(tempContext);
+
 
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
                 .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
                 .connectTimeout(CONN_TIMEOUT, TimeUnit.SECONDS)
-                .retryOnConnectionFailure(true);
+                .retryOnConnectionFailure(true)
+                .cache(cache)
+                .addInterceptor(new CacheInterceptor())
+                .addNetworkInterceptor(new CacheInterceptor());
+
 
         if (debug) {
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -51,6 +70,10 @@ public class HttpManager {
                 .build();
     }
 
+    private Cache buildCache(Context context) {
+        File file = GlobeContext.getDirectory(DirType.cache);
+        return new Cache(file, 10 * 1024 * 1024);
+    }
 
     public static HttpManager getInstance() {
         return sHttpManager;

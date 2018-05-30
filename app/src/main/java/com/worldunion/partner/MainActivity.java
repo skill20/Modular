@@ -61,21 +61,22 @@ public class MainActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .subscribe(new RxObserver<Book>("1") {
                     @Override
-                    protected void onStartRequest() {
+                    public void onStartRequest() {
                         String name = Thread.currentThread().getName();
                         Log.i(TAG, "onStartRequest" + name);
                     }
 
                     @Override
-                    protected void onSuccess(Book book) {
+                    public void onSuccess(Book book) {
                         String name = Thread.currentThread().getName();
                         Log.i(TAG, "onSuccess" + name);
                     }
 
                     @Override
-                    public void onError(Throwable e) {
-                        Log.i(TAG, "onError");
+                    public void onError(String s) {
+
                     }
+
                 });
     }
 }

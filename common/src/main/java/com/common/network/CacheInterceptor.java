@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import com.baselib.utils.NetworkHelper;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
@@ -18,16 +19,27 @@ import okhttp3.Response;
  * Copyright(c) 2017 世联行
  * Description
  */
-class CacheInterceptor implements Interceptor {
+public class CacheInterceptor implements Interceptor {
 
     @Override
     public Response intercept(Chain chain) throws IOException {
 
         Request request = chain.request();
         if (!NetworkHelper.sharedHelper().isNetworkAvailable()) {
-            // 没网强制从缓存读取
+            // 没网强制从缓存读取（适用addInterceptor(new CacheInterceptor())
+            //                .addNetworkInterceptor(new CacheInterceptor());）
+
+            CacheControl control;
+
+            String cacheHeader = request.header("cache");
+            if (TextUtils.equals(cacheHeader, "false")) {
+                control = CacheControl.FORCE_NETWORK;
+            } else {
+                control = CacheControl.FORCE_CACHE;
+            }
+
             request = request.newBuilder()
-                    .cacheControl(CacheControl.FORCE_CACHE)
+                    .cacheControl(control)
                     .build();
         }
 
@@ -48,7 +60,7 @@ class CacheInterceptor implements Interceptor {
                     .header("Cache-Control", cacheControl)
                     .build();
         } else {
-            int maxStale = 60 * 60 * 24 * 7; // 没网一周后失效
+            int maxStale = 60 * 60 * 24 ; // 没网一周后失效(addNetworkInterceptor(new CacheInterceptor())
             responseLatest = response.newBuilder()
                     .removeHeader("Pragma")
                     .removeHeader("Cache-Control")

@@ -1,1 +1,33 @@
+
+def test1 = {
+
+    println "before test"
+    def dir = gradle.getGradleHomeDir()
+    println dir
+
+    def version = gradle.getGradleVersion()
+    println version
+
+}
+
+def test2 = {
+    println "after test"
+}
+
+
+gradle.beforeProject {
+    println "beforeProject-----------------------------------"
+}
+
+
+
+gradle.buildFinished {
+    test2()
+}
+
+gradle.afterProject {
+    println "afterProject"+ it.project
+}
+test1()
+
 include ':app', ':baselib', ':resource', ':common'

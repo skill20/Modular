@@ -27,3 +27,7 @@ dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     api project(':common')
 }
+
+
+def name = getProject().name
+println "${name}-----project name"

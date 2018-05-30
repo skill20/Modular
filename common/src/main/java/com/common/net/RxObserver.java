@@ -1,7 +1,5 @@
 package com.common.net;
 
-import com.common.mvp.RxObservable;
-
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
@@ -11,7 +9,7 @@ import io.reactivex.disposables.Disposable;
  * Copyright(c) 2018 极光
  * Description
  */
-public abstract class RxObserver<T> implements Observer<T> {
+public abstract class RxObserver<T> implements Observer<T>, IObserver<T> {
 
     private String mKey;
 
@@ -25,9 +23,6 @@ public abstract class RxObserver<T> implements Observer<T> {
         onStartRequest();
     }
 
-    protected abstract void onStartRequest();
-    protected abstract void onSuccess(T t);
-
     @Override
     public void onNext(T t) {
         onSuccess(t);
@@ -36,7 +31,8 @@ public abstract class RxObserver<T> implements Observer<T> {
 
     @Override
     public void onError(Throwable e) {
-
+        String message = e.getMessage();
+        onError(message);
     }
 
     @Override

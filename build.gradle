@@ -28,4 +28,6 @@ task clean(type: Delete) {
 }
 
 apply from: 'config.gradle'
-
+getProject().getTasks().find {
+    println "Tasks-----" + it.name
+}

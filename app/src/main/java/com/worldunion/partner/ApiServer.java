@@ -2,6 +2,9 @@ package com.worldunion.partner;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.HeaderMap;
+import retrofit2.http.Headers;
 import retrofit2.http.Query;
 
 /**
@@ -11,6 +14,7 @@ import retrofit2.http.Query;
  * Description
  */
 public interface ApiServer {
+    @Headers("cache:false")
     @GET("book/search")
     Observable<Book> getSearchBook(@Query("q") String name,
                                    @Query("tag") String tag, @Query("start") int start,

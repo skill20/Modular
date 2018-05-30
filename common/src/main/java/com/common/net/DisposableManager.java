@@ -2,6 +2,8 @@ package com.common.net;
 
 import android.support.annotation.NonNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.WeakHashMap;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -24,6 +26,7 @@ public class DisposableManager {
     }
 
     private final WeakHashMap<String, CompositeDisposable> mDisposableMap = new WeakHashMap<>();
+    private final CompositeDisposable mComDisposable = new CompositeDisposable();
 
     private DisposableManager() {
 
@@ -39,6 +42,13 @@ public class DisposableManager {
         disposables.add(disposable);
     }
 
+    public void add(@NonNull Disposable disposable) {
+        mComDisposable.add(disposable);
+    }
+
+    public void delete(@NonNull Disposable disposable) {
+        mComDisposable.delete(disposable);
+    }
     /**
      * 根据key释放
      */
@@ -58,6 +68,8 @@ public class DisposableManager {
             disposables.clear();
         }
         mDisposableMap.clear();
+
+        mComDisposable.clear();
     }
 
 }
